@@ -1,0 +1,16 @@
+homeassistant:
+  name: 9FirstAve
+  unit_system: imperial
+  time_zone: America/Chicago
+
+frontend:
+
+lovelace:
+  mode: yaml
+
+config:
+
+api:
+
+http:
+  server_port: 8123

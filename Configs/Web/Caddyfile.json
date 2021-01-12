@@ -1,0 +1,34 @@
+{
+  "admin": {
+    "config": {
+      "persist": false
+    }
+  },
+  "apps": {
+    "http": {
+      "http_port": 8080,
+      "https_port": 8443,
+      "servers": {
+        "srv0": {
+          "listen": [
+            ":8080"
+          ],
+          "routes": [
+            {
+              "handle": [
+                {
+                  "handler": "reverse_proxy",
+                  "upstreams": [
+                    {
+                      "dial": "tasks.HomeAssistant:8123"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
